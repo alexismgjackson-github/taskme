@@ -1,0 +1,222 @@
+:root {
+  --color-button-hover: hsl(0, 0%, 50%);
+  --color-complete: hsl(120, 100%, 25%);
+  --color-dark: hsl(240, 64%, 27%);
+  --color-delete: hsl(0, 100%, 50%);
+  --color-light: hsl(0, 0%, 97%);
+  --color-neutral: hsl(0, 0%, 0%);
+  --font-family: "Space Grotesk", sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family);
+  font-size: 62.5%;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+/* SHARED */
+
+header,
+footer,
+main {
+  padding: 3rem;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+label,
+button {
+  text-transform: uppercase;
+}
+
+p,
+span,
+li,
+button,
+label,
+input {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+p,
+li {
+  line-height: 2.5rem;
+}
+
+/* HEADER */
+
+header {
+  align-items: center;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 3.6rem;
+  margin-right: 2rem;
+  text-transform: uppercase;
+}
+
+.header--icon {
+  font-size: 4rem;
+  margin-top: 1rem;
+}
+
+/* TASKLIST--FIELD */
+
+.tasklist {
+  margin-top: 3rem;
+  display: grid;
+  gap: 6rem;
+}
+
+.tasklist--field {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tasklist--input {
+  background-color: inherit;
+  border: 2.5px solid var(--color-dark);
+  border-radius: 2rem;
+  color: inherit;
+  height: 4rem;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.tasklist--input:focus {
+  outline: 1.5px solid var(--color-dark);
+}
+
+.add-task--btn {
+  background-color: var(--color-dark);
+  border-radius: 0.5rem;
+  border-style: none;
+  color: var(--color-light);
+  height: 4rem;
+  width: 10rem;
+}
+
+.add-task--btn:hover {
+  background-color: var(--color-button-hover);
+  cursor: pointer;
+}
+
+.add-task--btn:disabled {
+  background-color: var(--color-neutral);
+  cursor: not-allowed;
+}
+
+/* TASKLIST--LIST */
+
+.tasklist--list,
+.tasklist--empty {
+  min-height: 20rem;
+}
+
+.tasklist--item {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.task {
+  display: flex;
+  list-style: none;
+}
+
+.task:hover {
+  cursor: pointer;
+}
+
+.completed {
+  color: var(--color-complete);
+  text-decoration: line-through;
+}
+
+.delete--btn {
+  background-color: inherit;
+  border-style: none;
+  color: var(--color-dark);
+  font-size: 2.2rem;
+  margin-left: 1rem;
+}
+
+.delete--btn:hover {
+  color: var(--color-delete);
+  cursor: pointer;
+}
+
+.tasklist--empty {
+  opacity: 0.6;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+  header,
+  footer,
+  main {
+    padding: 3rem 3rem;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  header,
+  footer,
+  main {
+    padding: 3rem 12rem;
+  }
+  .tasklist--form {
+    gap: 2.5rem;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  header,
+  footer,
+  main {
+    padding: 3rem 24rem;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  header,
+  footer,
+  main {
+    padding: 3rem 36rem;
+  }
+}
