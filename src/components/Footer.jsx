@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer>
-      <p className="footer-paragraph">Designed & Developer by Alexis Jackson</p>
+      <p className="footer-paragraph">Designed & Developed by Alexis Jackson</p>
     </footer>
   );
 }
