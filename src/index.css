@@ -161,14 +161,14 @@ header {
 }
 
 .delete--btn {
-  background-color: var(--color-dark);
+  background-color: inherit;
   border-style: none;
   color: inherit;
   font-size: 2.2rem;
   margin-left: 1rem;
 }
 
-.delete--btn:focus {
+.delete--btn:hover {
   color: var(--color-delete);
   cursor: pointer;
 }
