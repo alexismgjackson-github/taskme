@@ -161,6 +161,7 @@ header {
 }
 
 .delete--btn {
+  background-color: var(--color-dark);
   border-style: none;
   color: inherit;
   font-size: 2.2rem;
