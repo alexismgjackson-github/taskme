@@ -5,7 +5,7 @@ import { BsFillTrashFill } from "react-icons/bs";
 function TaskList() {
   const [taskInput, setTaskInput] = useState("");
 
-  // Save task from the localStorage
+  // Save task to the localStorage
   React.useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(taskList));
   }, [taskList]);
@@ -14,7 +14,7 @@ function TaskList() {
     setTaskInput(e.target.value);
   };
 
-  // Get task to localStorage
+  // Get task from the localStorage
   const [taskList, setTaskList] = useState(
     JSON.parse(localStorage.getItem("tasks")) || []
   );
