@@ -6,15 +6,15 @@ function TaskList() {
   // Set state of taskInput
   const [taskInput, setTaskInput] = useState("");
 
-  // Handle input value changes
-  const handleChange = (e) => {
-    setTaskInput(e.target.value);
-  };
-
   // Get task from the localStorage
   const [taskList, setTaskList] = useState(
     JSON.parse(localStorage.getItem("tasks")) || []
   );
+
+  // Handle input value changes
+  const handleChange = (e) => {
+    setTaskInput(e.target.value);
+  };
 
   // Save task to the localStorage
   React.useEffect(() => {
