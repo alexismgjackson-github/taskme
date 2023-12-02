@@ -5,10 +5,7 @@ import { BsFillTrashFill } from "react-icons/bs";
 function TaskList() {
   const [taskInput, setTaskInput] = useState("");
 
-  const [taskList, setTaskList] = useState(
-    JSON.parse(localStorage.getItem("tasks")) || []
-  );
-
+  // Save task from the localStorage
   React.useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(taskList));
   }, [taskList]);
@@ -17,6 +14,12 @@ function TaskList() {
     setTaskInput(e.target.value);
   };
 
+  // Get task to localStorage
+  const [taskList, setTaskList] = useState(
+    JSON.parse(localStorage.getItem("tasks")) || []
+  );
+
+  // Add task to tasklist in descending order with unique ID
   const addTask = () => {
     const newTask = {
       id: Date.now(),
@@ -26,11 +29,13 @@ function TaskList() {
     setTaskInput("");
   };
 
+  // Delete task from tasklist via unique ID
   const deleteTask = (id) => {
     const newTaskList = taskList.filter((task) => task.id !== id);
     setTaskList(newTaskList);
   };
 
+  // Toggle "completed" styling on task in tasklist
   const toggleCompleted = (id) => {
     setTaskList(
       taskList.map((task) =>
