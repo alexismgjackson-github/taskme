@@ -3,7 +3,13 @@ import { useState } from "react";
 import { BsFillTrashFill } from "react-icons/bs";
 
 function TaskList() {
+  // Set state of taskInput
   const [taskInput, setTaskInput] = useState("");
+
+  // Handle input value changes
+  const handleChange = (e) => {
+    setTaskInput(e.target.value);
+  };
 
   // Get task from the localStorage
   const [taskList, setTaskList] = useState(
@@ -29,11 +35,6 @@ function TaskList() {
   const deleteTask = (id) => {
     const newTaskList = taskList.filter((task) => task.id !== id);
     setTaskList(newTaskList);
-  };
-
-  // Handle input value changes
-  const handleChange = (e) => {
-    setTaskInput(e.target.value);
   };
 
   // Toggle "completed" styling on task in tasklist
